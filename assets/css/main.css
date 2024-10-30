@@ -10,45 +10,56 @@
 # Font & Color Variables
 # Help: https://bootstrapmade.com/color-system/
 --------------------------------------------------------------*/
-/* Fonts */
 :root {
-  --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "Nunito",  sans-serif;
-  --nav-font: "Poppins",  sans-serif;
+  --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --heading-font: "Nunito", sans-serif;
+  --nav-font: "Poppins", sans-serif;
 }
 
-/* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
-:root { 
-  --background-color: #ffffff; /* Background color for the entire website, including individual sections */
-  --default-color: #444444; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #012970; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #4154f1; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
-  --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
-  --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
-}
-
-/* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
+/* Global Colors - White Background with Brown Accents */
 :root {
-  --nav-color: #012970;  /* The default color of the main navmenu links */
-  --nav-hover-color: #4154f1; /* Applied to main navmenu links when they are hovered over or active */
-  --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
-  --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
-  --nav-dropdown-color: #212529; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #4154f1; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  --background-color: #ffffff;
+  /* Pure white background */
+  --default-color: #4b3b2b;
+  /* Rich brown for text */
+  --heading-color: #3d2f27;
+  /* Dark brown for headings */
+  --accent-color: #a67c52;
+  /* Warm brown accent color */
+  --surface-color: #ffffff;
+  /* White for cards and other surfaces */
+  --contrast-color: #ffffff;
+  /* White for text over darker backgrounds */
 }
 
-/* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
+/* Nav Menu Colors */
+:root {
+  --nav-color: #4b3b2b;
+  /* Brown for nav menu links */
+  --nav-hover-color: #a67c52;
+  /* Warm brown on hover for nav links */
+  --nav-mobile-background-color: #ffffff;
+  /* Pure white background for mobile nav */
+  --nav-dropdown-background-color: #ffffff;
+  /* White for dropdown items */
+  --nav-dropdown-color: #4b3b2b;
+  /* Rich brown for dropdown items */
+  --nav-dropdown-hover-color: #a67c52;
+  /* Warm brown for dropdown items on hover */
+}
+
+/* Background Variants (No changes as background is white) */
 
 .light-background {
-  --background-color: #f9f9f9;
+  --background-color: #ffffff;
   --surface-color: #ffffff;
 }
 
 .dark-background {
-  --background-color: #060606;
+  --background-color: #4b3b2b;
   --default-color: #ffffff;
   --heading-color: #ffffff;
-  --surface-color: #252525;
+  --surface-color: #3d2f27;
   --contrast-color: #ffffff;
 }
 
@@ -56,6 +67,46 @@
 :root {
   scroll-behavior: smooth;
 }
+
+/* Additional Section Styles */
+
+body {
+  background-color: var(--background-color);
+  color: var(--default-color);
+  font-family: var(--default-font);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--heading-color);
+  font-family: var(--heading-font);
+}
+
+.navbar {
+  background-color: var(--background-color);
+  color: var(--nav-color);
+}
+
+.navbar a {
+  color: var(--nav-color);
+}
+
+.navbar a:hover {
+  color: var(--nav-hover-color);
+}
+
+/* Surface elements like cards or boxes */
+.card,
+.box {
+  background-color: var(--surface-color);
+  color: var(--default-color);
+}
+
+
 
 /*--------------------------------------------------------------
 # General Styling & Shared Classes
@@ -525,6 +576,28 @@ h6 {
     background-color: rgba(33, 37, 41, 0.03);
   }
 }
+
+/* Styles for the Register button */
+.navmenu ul li .register-btn {
+  background-color: var(--accent-color);
+  /* Use accent color for button background */
+  color: var(--contrast-color);
+  /* White text on the button */
+  padding: 8px 16px;
+  /* Add some padding for button feel */
+  margin-left: 20px; /* Space between the register button and other nav items */
+  border-radius: 12px;
+  /* Rounded corners for button */
+  transition: background-color 0.3s ease;
+}
+
+.navmenu ul li .register-btn:hover {
+  background-color: #a67c52;
+  /* Lighter brown on hover */
+  color: #ffffff;
+  /* Ensure contrast on hover */
+}
+
 
 /*--------------------------------------------------------------
 # Global Footer
@@ -1657,97 +1730,100 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Team Section
+# Team
 --------------------------------------------------------------*/
-.team .team-member {
-  box-shadow: 0px 0 30px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  text-align: center;
-  border-radius: 5px;
-  transition: 0.3s;
-}
-
-.team .team-member .member-img {
+.team .member {
   position: relative;
-  overflow: hidden;
-}
-
-.team .team-member .member-img:after {
-  position: absolute;
-  content: "";
-  left: -1px;
-  right: -1px;
-  bottom: -1px;
-  height: 100%;
-  background-color: var(--surface-color);
-  -webkit-mask: url("../img/team-shape.svg") no-repeat center bottom;
-  mask: url("../img/team-shape.svg") no-repeat center bottom;
-  -webkit-mask-size: contain;
-  mask-size: contain;
-  z-index: 1;
-}
-
-.team .team-member .social {
-  position: absolute;
-  right: -100%;
-  top: 30px;
-  opacity: 0;
-  border-radius: 4px;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  border-radius: 5px;
+  background: #fff;
   transition: 0.5s;
-  background: color-mix(in srgb, var(--background-color), transparent 60%);
-  z-index: 2;
 }
 
-.team .team-member .social a {
-  transition: color 0.3s;
-  color: color-mix(in srgb, var(--default-color), transparent 50%);
-  margin: 15px 12px;
-  display: block;
-  line-height: 0;
-  text-align: center;
+.team .member .pic {
+  overflow: hidden;
+  width: 180px;
+  border-radius: 50%;
 }
 
-.team .team-member .social a:hover {
-  color: var(--default-color);
+.team .member .pic img {
+  transition: ease-in-out 0.3s;
 }
 
-.team .team-member .social i {
-  font-size: 18px;
+.team .member:hover {
+  transform: translateY(-10px);
 }
 
-.team .team-member .member-info {
-  padding: 10px 15px 20px 15px;
+.team .member .member-info {
+  padding-left: 30px;
 }
 
-.team .team-member .member-info h4 {
+.team .member h4 {
   font-weight: 700;
   margin-bottom: 5px;
   font-size: 20px;
+  color: #37517e;
 }
 
-.team .team-member .member-info span {
+.team .member span {
   display: block;
+  font-size: 15px;
+  padding-bottom: 10px;
+  position: relative;
+  font-weight: 500;
+}
+
+.team .member span::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 1px;
+  background: #cbd6e9;
+  bottom: 0;
+  left: 0;
+}
+
+.team .member p {
+  margin: 10px 0 0 0;
   font-size: 14px;
-  font-weight: 400;
-  color: color-mix(in srgb, var(--default-color), transparent 50%);
 }
 
-.team .team-member .member-info p {
-  font-style: italic;
-  font-size: 14px;
-  padding-top: 15px;
-  line-height: 26px;
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
+.team .member .social {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 
-.team .team-member:hover {
-  transform: scale(1.08);
-  box-shadow: 0px 0 30px rgba(0, 0, 0, 0.1);
+.team .member .social a {
+  transition: ease-in-out 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  width: 32px;
+  height: 32px;
+  background: #eff2f8;
 }
 
-.team .team-member:hover .social {
-  right: 8px;
-  opacity: 1;
+.team .member .social a i {
+  color: #37517e;
+  font-size: 16px;
+  margin: 0 2px;
+}
+
+.team .member .social a:hover {
+  background: #47b2e4;
+}
+
+.team .member .social a:hover i {
+  color: #fff;
+}
+
+.team .member .social a+a {
+  margin-left: 8px;
 }
 
 /*--------------------------------------------------------------
