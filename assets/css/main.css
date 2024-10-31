@@ -1738,7 +1738,7 @@ section,
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
   padding: 30px;
   border-radius: 5px;
-  background: #fff;
+  background: #fff; /* Keep white for member cards for contrast */
   transition: 0.5s;
 }
 
@@ -1764,7 +1764,7 @@ section,
   font-weight: 700;
   margin-bottom: 5px;
   font-size: 20px;
-  color: #37517e;
+  color: #4E3B31; /* Dark brown for member names */
 }
 
 .team .member span {
@@ -1773,6 +1773,7 @@ section,
   padding-bottom: 10px;
   position: relative;
   font-weight: 500;
+  color: #6B4B3A; /* Medium brown for role or title */
 }
 
 .team .member span::after {
@@ -1781,7 +1782,7 @@ section,
   display: block;
   width: 50px;
   height: 1px;
-  background: #cbd6e9;
+  background: #cbd6e9; /* Light gray for underline */
   bottom: 0;
   left: 0;
 }
@@ -1789,6 +1790,7 @@ section,
 .team .member p {
   margin: 10px 0 0 0;
   font-size: 14px;
+  color: #4B3A31; /* Darker shade for description */
 }
 
 .team .member .social {
@@ -1806,26 +1808,27 @@ section,
   border-radius: 50px;
   width: 32px;
   height: 32px;
-  background: #eff2f8;
+  background: #E5CDBE; /* Light brown for social icons */
 }
 
 .team .member .social a i {
-  color: #37517e;
+  color: #4E3B31; /* Dark brown for icon color */
   font-size: 16px;
   margin: 0 2px;
 }
 
 .team .member .social a:hover {
-  background: #47b2e4;
+  background: #D4B39B; /* Slightly darker brown on hover */
 }
 
 .team .member .social a:hover i {
-  color: #fff;
+  color: #fff; /* White for icon on hover */
 }
 
 .team .member .social a+a {
   margin-left: 8px;
 }
+
 
 /*--------------------------------------------------------------
 # Clients Section
