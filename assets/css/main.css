@@ -2877,3 +2877,125 @@ section,
   color: color-mix(in srgb, var(--default-color), transparent 60%);
   font-size: 14px;
 }
+
+
+/*--------------------------------------------------------------
+# Event-Blog-Section
+--------------------------------------------------------------*/
+.event {
+  background-color: #f8f4e3; /* Very light beige background */
+  padding: 40px;
+}
+
+.event-container {
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.event-slider {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px 0 0 8px; /* Rounded left corners */
+}
+
+.slide {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  position: absolute;
+  width: 100%;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  filter: brightness(0.9); /* Slightly darken images for a cohesive look */
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.event-details {
+  flex: 1;
+  padding: 30px; /* Padding to match team member card styling */
+  background: #fff; /* Keep white for details for contrast */
+  border-radius: 5px; /* Rounded corners for details */
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1); /* Light shadow effect */
+  transition: transform 0.5s; /* Smooth transition effect */
+}
+
+.event-details:hover {
+  transform: translateY(-10px); /* Lift effect on hover */
+}
+
+.event-details h2 {
+  font-size: 28px;
+  color: #4E3B31; /* Dark brown for title */
+  margin-bottom: 15px;
+}
+
+.event-details p {
+  font-size: 16px;
+  margin: 10px 0;
+  color: #4B3A31; /* Darker shade for paragraph text */
+}
+
+.event-details i {
+  margin-right: 10px;
+  color: #6B4B3A; /* Medium brown for icons */
+}
+
+button {
+  background-color: #E5CDBE; /* Light brown button */
+  color: #4E3B31; /* Dark brown text */
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px 5px;
+  transition: background 0.3s, color 0.3s; /* Smooth transition */
+}
+
+button:hover {
+  background-color: #D4B39B; /* Slightly darker brown on hover */
+  color: #fff; /* White text on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .event-container {
+    flex-direction: column; /* Stack items vertically on mobile */
+    align-items: flex-start; /* Align items to the start */
+  }
+
+  .event-slider {
+    margin-bottom: 20px; /* Add margin below the slider */
+    border-radius: 8px; /* Full border radius for mobile */
+  }
+
+  .event-details {
+    padding: 20px; /* Reduce padding for mobile */
+    width: 100%; /* Ensure it takes full width */
+  }
+
+  .event-details h2 {
+    font-size: 24px; /* Smaller heading size */
+  }
+
+  .event-details p {
+    font-size: 14px; /* Smaller paragraph text */
+  }
+
+  button {
+    padding: 8px 12px; /* Smaller button padding */
+    font-size: 14px; /* Smaller button text */
+  }
+}
+
+
