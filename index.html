@@ -663,6 +663,7 @@
 
 <!-- Contact Section -->
 <section id="contact" class="contact section">
+
   <!-- Section Title -->
   <div class="container section-title" data-aos="fade-up">
     <h2>Contact</h2>
@@ -670,71 +671,109 @@
   </div><!-- End Section Title -->
 
   <div class="container" data-aos="fade-up" data-aos-delay="100">
+
     <div class="row gy-4">
+
       <div class="col-lg-6">
+
         <div class="row gy-4">
-          <!-- Contact info items here -->
+          <div class="col-md-6">
+            <div class="info-item" data-aos="fade" data-aos-delay="200">
+              <i class="bi bi-geo-alt"></i>
+              <h3>Address</h3>
+              <p>AIKTC, Plot No. 2 & 3, Sector - 16, Near Thana Naka, Khandagao, New Panvel</p>
+            </div>
+          </div><!-- End Info Item -->
+
+          <div class="col-md-6">
+            <div class="info-item" data-aos="fade" data-aos-delay="300">
+              <i class="bi bi-telephone"></i>
+              <h3>Call Us</h3>
+              <p>+91-8928888486</p>
+              <p>+91-9022355499</p>
+            </div>
+          </div><!-- End Info Item -->
+
+          <div class="col-md-6">
+            <div class="info-item" data-aos="fade" data-aos-delay="400">
+              <i class="bi bi-envelope"></i>
+              <h3>Email Us</h3>
+              <p>codechef.chapter@aiktc.ac.in</p>
+              <p>21co07@aiktc.ac.in</p>
+            </div>
+          </div><!-- End Info Item -->
+
+          <div class="col-md-6">
+            <div class="info-item" data-aos="fade" data-aos-delay="500">
+              <i class="bi bi-clock"></i>
+              <h3>Open Hours</h3>
+              <p>Monday - Friday</p>
+              <p>9:00AM - 05:00PM</p>
+            </div>
+          </div><!-- End Info Item -->
+
         </div>
+
       </div>
 
       <div class="col-lg-6">
         <!-- Contact Form -->
         <form class="php-email-form" data-aos="fade-up" data-aos-delay="200">
           <div class="row gy-4">
-            <div class="col-md-6">
-                <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
-            </div>
-            <div class="col-md-6">
-                <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
-            </div>
-            <div class="col-12">
-                <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
-            </div>
-            <div class="col-12">
-                <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
-            </div>
-            <div class="col-12 text-center">
-                <div class="loading">Loading</div>
-                <div class="error-message" style="display: none;">Something went wrong. Please try again later.</div>
-                <div class="sent-message" style="display: none;">Your message has been sent. Thank you!</div>
-                <button type="submit">Send Message</button>
-            </div>
+              <div class="col-md-6">
+                  <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+              </div>
+              <div class="col-md-6">
+                  <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+              </div>
+              <div class="col-12">
+                  <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+              </div>
+              <div class="col-12">
+                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+              </div>
+              <div class="col-12 text-center">
+                  <div class="loading">Loading</div>
+                  <div class="error-message" style="display: none;">Something went wrong. Please try again later.</div>
+                  <div class="sent-message" style="display: none;">Your message has been sent. Thank you!</div>
+                  <button type="submit">Send Message</button>
+              </div>
           </div>
-        </form>
-      </div><!-- End Contact Form -->
-    </div>
-  </div>
-</section><!-- /Contact Section -->
-
-<!-- Email.js Script (Place just before closing </body>) -->
-<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-
-<!-- Email.js Integration Script -->
-<script type="text/javascript">
-  // Initialize Email.js with your user ID
-  (function() {
-      emailjs.init('9E3EA4UfhCKv2R9NB'); // Replace with your actual public key
-  })();
-
-  // Add event listener to the form submission
-  document.querySelector('.php-email-form').addEventListener('submit', function (event) {
-      event.preventDefault(); // Prevent form from submitting the default way
-
-      // Send the form data to Email.js
-      emailjs.sendForm('service_tqie7xn', 'template_t7yw7eh', this)
-          .then(() => {
-              // Success message
-              document.querySelector('.sent-message').style.display = 'block';
-              document.querySelector('.error-message').style.display = 'none';
-          }, (error) => {
-              // Error message
-              document.querySelector('.error-message').style.display = 'block';
-              document.querySelector('.sent-message').style.display = 'none';
-              console.error('Error:', error);
+      </form>
+      
+        <!-- Email.js Integration Script -->
+        <script type="text/javascript">
+          // Initialize Email.js with your user ID
+          (function() {
+              emailjs.init('9E3EA4UfhCKv2R9NB'); // Replace with your actual public key
+          })();
+      
+          // Add event listener to the form submission
+          document.querySelector('.php-email-form').addEventListener('submit', function (event) {
+              event.preventDefault(); // Prevent form from submitting the default way
+      
+              // Send the form data to Email.js
+              emailjs.sendForm('service_tqie7xn', 'template_t7yw7eh', this)
+                  .then(() => {
+                      // Success message
+                      document.querySelector('.sent-message').style.display = 'block';
+                      document.querySelector('.error-message').style.display = 'none';
+                  }, (error) => {
+                      // Error message
+                      document.querySelector('.error-message').style.display = 'block';
+                      document.querySelector('.sent-message').style.display = 'none';
+                      console.error('Error:', error);
+                  });
           });
-  });
-</script>
+        </script>
+        
+      </div><!-- End Contact Form -->
 
+    </div>
+
+  </div>
+
+</section><!-- /Contact Section -->
 
 
 
