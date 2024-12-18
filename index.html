@@ -771,6 +771,31 @@
                 </div>
               </div>
             </form>
+            <!-- Email.js Integration Script -->
+            <script type="text/javascript">
+              // Initialize Email.js with your user ID
+              (function () {
+                emailjs.init('9E3EA4UfhCKv2R9NB'); // Replace with your actual public key
+              })();
+
+              // Add event listener to the form submission
+              document.querySelector('.php-email-form').addEventListener('submit', function (event) {
+                event.preventDefault(); // Prevent form from submitting the default way
+
+                // Send the form data to Email.js
+                emailjs.sendForm('service_tqie7xn', 'template_t7yw7eh', this)
+                  .then(() => {
+                    // Success message
+                    document.querySelector('.sent-message').style.display = 'block';
+                    document.querySelector('.error-message').style.display = 'none';
+                  }, (error) => {
+                    // Error message
+                    document.querySelector('.error-message').style.display = 'block';
+                    document.querySelector('.sent-message').style.display = 'none';
+                    console.error('Error:', error);
+                  });
+              });
+            </script>
           </div><!-- End Contact Form -->
         </div>
       </div>
