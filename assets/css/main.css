@@ -2355,13 +2355,21 @@ section,
 # Blog Details Section
 --------------------------------------------------------------*/
 .blog-details {
-  padding-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Ensure it takes the full viewport height */
+  background-color: var(--background-color); /* Optional: Add a background color for contrast */
+  padding: 30px; /* Add padding for small screens */
 }
 
 .blog-details .article {
   background-color: var(--surface-color);
   padding: 30px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 16px; /* Add rounded corners for a modern look */
+  max-width: 800px; /* Limit the width of the box */
+  width: 100%; /* Ensure it’s responsive */
 }
 
 .blog-details .post-img {
